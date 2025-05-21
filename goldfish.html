@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goldfish Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="goldfish.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-fish"></i>
+                    <h1>Goldfish Network</h1>
+                </a>
+                <nav class="nav-links">
+                    <a href="#"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-compass"></i> Explore</a>
+                    <a href="#"><i class="fas fa-users"></i> Following</a>
+                    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+                </nav>
+                <div class="auth-buttons" id="auth-section">
+                    <button class="btn btn-outline" id="connect-metamask">
+                        <i class="fas fa-wallet"></i> Connect MetaMask
+                    </button>
+                    <button class="btn btn-primary" id="connect-google">
+                        <i class="fab fa-google"></i> Sign in with Google
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Wallet section (hidden until logged in) -->
+            <div class="wallet-info" id="wallet-section" style="display: none;">
+                <div class="wallet-header">
+                    <h2>Your Wallet</h2>
+                    <div class="wallet-balance">
+                        <span class="balance-amount" id="fish-balance">0</span>
+                        <div class="fish-token">
+                            <i class="fas fa-fish"></i>
+                            <span>FISH</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="wallet-address" id="wallet-address">Connect wallet to view address</p>
+            </div>
+
+            <!-- Upload section (hidden until logged in) -->
+            <div class="upload-section" id="upload-section" style="display: none;">
+                <h2>Upload Image</h2>
+                <p>Share your images with the community and earn FISH tokens</p>
+                
+                <div class="upload-dropzone" id="upload-dropzone">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Drag & Drop or Click to Upload</h3>
+                    <p>Costs 100 FISH tokens per upload</p>
+                    <input type="file" id="file-input" accept="image/*">
+                </div>
+            </div>
+
+            <!-- Welcome banner (shown when not logged in) -->
+            <div class="welcome-banner" id="welcome-banner">
+                <h2>Welcome to Goldfish Network</h2>
+                <p>A decentralized image sharing platform powered by blockchain technology. Upload, like, and comment on images while earning FISH tokens.</p>
+                <button class="btn btn-outline" style="background-color: white; color: var(--primary-color);">
+                    Learn More
+                </button>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>10K+</h3>
+                        <p>Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>50K+</h3>
+                        <p>Images</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>1M+</h3>
+                        <p>FISH Distributed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rewards section -->
+            <div class="rewards-section">
+                <h2>Earn FISH Tokens</h2>
+                <p>Participate in the Goldfish Network and earn rewards</p>
+
+                <div class="rewards-grid">
+                    <div class="reward-item">
+                        <i class="fas fa-user-plus reward-icon"></i>
+                        <div class="reward-amount">500 FISH</div>
+                        <p>Registration Bonus</p>
+                    </div>
+                    <div class="reward-item">
+                        <i class="fas fa-upload reward-icon"></i>
+                        <div class="reward-amount">-100 FISH</div>
+                        <p>Image Upload Cost</p>
+                    </div>
+                    <div class="reward-item">
+                        <i class="fas fa-thumbs-up reward-icon"></i>
+                        <div class="reward-amount">5 FISH</div>
+                        <p>Like Image</p>
+                    </div>
+                    <div class="reward-item">
+                        <i class="fas fa-comment reward-icon"></i>
+                        <div class="reward-amount">30 FISH</div>
+                        <p>Comment on Image</p>
+                    </div>
+                    <div class="reward-item">
+                        <i class="fas fa-user-friends reward-icon"></i>
+                        <div class="reward-amount">200 FISH</div>
+                        <p>Refer a Friend</p>
+                    </div>
+                    <div class="reward-item">
+                        <i class="fas fa-gift reward-icon"></i>
+                        <div class="reward-amount">200 FISH</div>
+                        <p>Being Referred</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid (sample) -->
+            <h2>Trending Images</h2>
+            <div class="content-grid" id="image-grid">
+                <!-- Image cards will be added dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+   <script src="goldfish.js"></script>
+</body>
+</html>
