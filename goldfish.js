@@ -240,11 +240,11 @@
                     // await contract.uploadImage(imageHash, mockIpfsHash);
                     
                     // Simulate success
-                    alert(`Image uploaded successfully!\nIPFS: ${mockIpfsHash}\nCost: 100 FISH tokens`);
+                    alert(`Image uploaded successfully!\nIPFS: ${mockIpfsHash}\nReward: 100 FISH tokens`);
                     
                     // Update balance display (subtract 100 FISH)
                     const currentBalance = parseFloat(fishBalanceEl.textContent);
-                    fishBalanceEl.textContent = (currentBalance - 100).toFixed(2);
+                    fishBalanceEl.textContent = (currentBalance + 100).toFixed(2);
                     
                     // Add the new image to the grid (at the top)
                     const newImage = {
